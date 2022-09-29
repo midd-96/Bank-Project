@@ -10,7 +10,7 @@ dropdb:
 	sudo docker exec -it postgres12 dropdb simple_bank
 
 migrateup:
-	sudo migrate -path db/migration -database "$(DB_URL)" -verbose up
+	migrate -path db/migration -database "$(DB_URL)" -verbose up
 
 migratedown:
 	migrate -path db/migration -database "$(DB_URL)" -verbose down
