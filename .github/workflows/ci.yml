@@ -14,11 +14,6 @@ jobs:
   
     services:
 
-    # - name: Login to DockerHub
-    #     uses: docker/login-action@v1
-    #     with:
-    #       username: ${{ secrets.DOCKER_USERNAME }}
-    #       password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
       postgres:
         image: postgres:12
         env:
@@ -26,7 +21,7 @@ jobs:
           POSTGRES_PASSWORD: secret
           POSTGRES_DB: simple_bank
         ports:
-            - 5432:5432
+            - 5433:5432
           options : >-
             --health-cmd pg-isready
             --health-interval 20s
